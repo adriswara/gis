@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+	  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <!-- end leaflet -->
     <title>Angkotin</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </head>
@@ -23,17 +27,11 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <!-- <a class="nav-link" href="#">Link</a> -->
               </li>
               <li class="nav-item">
-                <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
               </li>
             </ul>
-                <a class="nav-link" href="login.php" aria-disabled="true"><button class="btn btn-outline-primary" type="submit">Admin Login</button></a>
-            <!-- <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
+            <a class="nav-link" href="login.php" aria-disabled="true"><button class="btn btn-outline-primary" type="submit">Admin Login</button></a>
           </div>
         </div>
       </nav>
