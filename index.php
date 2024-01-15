@@ -122,7 +122,7 @@
   function onChange() {
     var long = e.value;
     var lat = e.options[e.selectedIndex].text;
-    console.log(long, text);
+    console.log(long, lat);
     // var map = L.map('map').setView([-6.9175, 107.6191], 11);
   }
   e.onchange = onChange;
