@@ -26,7 +26,7 @@
                   $i= 1;
                   foreach ($rute as $data)  :
                   ?>
-                  <option value="<?php echo $data['id'] ?>"><?php echo $data['nama'] ?></option>
+                  <option label="<?php echo $data['nama'] ?>" value="<?php echo $data['longitude'] ?>"><?php echo $data['latitude'] ?> </option>
                   <?php endforeach ?>          
               </select>
             </form>
@@ -118,10 +118,12 @@
   // getter
 
   var e = document.getElementById("routeStart");
+  // var long = document.getElementById("longStart");
   function onChange() {
-    var value = e.value;
-    var text = e.options[e.selectedIndex].text;
-    console.log(value, text);
+    var long = e.value;
+    var lat = e.options[e.selectedIndex].text;
+    console.log(long, text);
+    // var map = L.map('map').setView([-6.9175, 107.6191], 11);
   }
   e.onchange = onChange;
   onChange();
@@ -137,7 +139,7 @@
 			iconSize: [70, 70]
 		})
 
-        var marker = L.marker([-6.9175, 107.6191], { icon: taxiIcon }).addTo(map);
+    var marker = L.marker([-6.9175, 107.6191], { icon: taxiIcon }).addTo(map);
 
 		map.on('click', function (e) {
 			console.log(e)
