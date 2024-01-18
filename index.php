@@ -45,7 +45,7 @@
                 $i= 1;
                 foreach ($rute as $data)  :
                 ?>
-                <option value="<?php echo $data['id'] ?>"><?php echo $data['nama'] ?></option>
+                  <option label="<?php echo $data['nama'] ?>" value="<?php echo $data['longitude']?>,<?php echo $data['latitude']?>"></option>
                 <?php endforeach ?>          
             </select>          
         </ul>
@@ -113,22 +113,20 @@
 
 
 </body>
-<script>
+<script>  
 // onload
-
 window.onload = function() {
+//start create open street map instance
   var map = L.map('map').setView([-6.9175, 107.6191], 11);  
   var layer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
-
-  // var marker = new L.marker([-6.9175, 107.6191]).addTo(map);
-
-
+//end create open street map instance
   
+//fetch dropdown keberangkatan
   var dropdown1 = document.getElementById("routeStart");
-
+  
   dropdown1.addEventListener("change", (e) => {
     var coord = e.target.value.split(",")
     console.log(coord)
@@ -136,7 +134,7 @@ window.onload = function() {
     var lat = coord[1]
    
     if (long!== NaN&&lat!==NaN) {
-      addPoint(parseFloat(long), parseFloat(lat));
+      addPoint1(parseFloat(long), parseFloat(lat));
     }
     else{
       console.log("all data is undefined");
@@ -145,8 +143,39 @@ window.onload = function() {
   }
   );
 
+  function addPoint1(long, lat){
+  
+    var taxiIcon = L.icon({
+      iconUrl: 'img/waypoint.png',
+      iconSize: [70, 70]
+    })
 
-  function addPoint(long, lat){
+    console.log(long, lat);
+    var marker = new L.marker([long, lat]).addTo(map);
+  }
+//end fetch dropdown keberangkatan
+
+//fetch dropdown kedatangan
+
+var dropdown2 = document.getElementById("routeEnd");
+  
+  dropdown2.addEventListener("change", (e) => {
+    var coord = e.target.value.split(",")
+    console.log(coord)
+    var long = coord[0]
+    var lat = coord[1]
+   
+    if (long!== NaN&&lat!==NaN) {
+      addPoint2(parseFloat(long), parseFloat(lat));
+    }
+    else{
+      console.log("all data is undefined");
+    }
+  
+  }
+  );
+
+  function addPoint2(long, lat){
   
     var taxiIcon = L.icon({
       iconUrl: 'img/waypoint.png',
@@ -157,42 +186,47 @@ window.onload = function() {
     var marker = new L.marker([long, lat]).addTo(map);
   }
 
+//end fetch dropdown kedatangan
+
 }
+//end onload
+
+/*
 
   // getter
 
-		// var map = L.map('map').setView([-6.9175, 107.6191], 11);
-		// mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
-		// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: 'Leaflet &copy; ' + mapLink + ', contribution', maxZoom: 18 }).addTo(map);
+		var map = L.map('map').setView([-6.9175, 107.6191], 11);
+		mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: 'Leaflet &copy; ' + mapLink + ', contribution', maxZoom: 18 }).addTo(map);
 
-		// var taxiIcon = L.icon({
-		// 	iconUrl: 'img/waypoint.png',
-		// 	iconSize: [70, 70]
-		// })
+		var taxiIcon = L.icon({
+			iconUrl: 'img/waypoint.png',
+			iconSize: [70, 70]
+		})
 
-    // var marker = L.marker([-6.9175, 107.6191], { icon: taxiIcon }).addTo(map);
-  // 
-		// map.on('click', function (e) {
-		// 	console.log(e)
-		// 	var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
-		// 	L.Routing.control({
-		// 		waypoints: [
-		// 			L.latLng(-6.9175, 107.6191),
-		// 			L.latLng(e.latlng.lat, e.latlng.lng)
-		// 		]
-		// 	}).on('routesfound', function (e) {
-		// 		var routes = e.routes;
-		// 		console.log(routes);
+    var marker = L.marker([-6.9175, 107.6191], { icon: taxiIcon }).addTo(map);
+    
+		map.on('click', function (e) {
+			console.log(e)
+			var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+			L.Routing.control({
+				waypoints: [
+					L.latLng(-6.9175, 107.6191),
+					L.latLng(e.latlng.lat, e.latlng.lng)
+				]
+			}).on('routesfound', function (e) {
+				var routes = e.routes;
+				console.log(routes);
 
-		// 		e.routes[0].coordinates.forEach(function (coord, index) {
-		// 			setTimeout(function () {
-		// 				marker.setLatLng([coord.lat, coord.lng]);
-		// 			}, 100 * index)
-		// 		})
+				e.routes[0].coordinates.forEach(function (coord, index) {
+					setTimeout(function () {
+						marker.setLatLng([coord.lat, coord.lng]);
+					}, 100 * index)
+				})
 
-		// 	}).addTo(map);
-		// });
-
+			}).addTo(map);
+		});
+*/
 
 	</script>
 </html>
