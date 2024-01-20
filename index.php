@@ -26,7 +26,7 @@
                   $i= 1;
                   foreach ($rute as $data)  :
                   ?>
-                  <option label="<?php echo $data['nama'] ?>" value="<?php echo $data['longitude']?>,<?php echo $data['latitude']?>"></option>
+                  <option label="<?php echo $data['nama'] ?>" value="<?php echo $data['longitude']?>,<?php echo $data['latitude']?>,<?php echo $data['nama'] ?>"></option>
                   <?php endforeach ?>          
               </select>
             </form>
@@ -45,7 +45,7 @@
                 $i= 1;
                 foreach ($rute as $data)  :
                 ?>
-                  <option label="<?php echo $data['nama'] ?>" value="<?php echo $data['longitude']?>,<?php echo $data['latitude']?>"></option>
+                  <option label="<?php echo $data['nama'] ?>" value="<?php echo $data['longitude']?>,<?php echo $data['latitude']?>,<?php echo $data['nama'] ?>"></option>
                 <?php endforeach ?>          
             </select>          
         </ul>
@@ -127,6 +127,8 @@ var longStart = 0;
 var longEnd = 0;
 var latStart = 0;
 var latEnd = 0;  
+var descStart = "";
+var descEnd = "";
 //fetch dropdown keberangkatan
   var dropdown1 = document.getElementById("routeStart");
   dropdown1.addEventListener("change", (e) => {
@@ -134,7 +136,8 @@ var latEnd = 0;
     console.log(coord)
     var long = coord[0]
     var lat = coord[1]
-   
+    descStart = coord[2]
+    console.log(descStart)
     if (long!== NaN&&lat!==NaN) {
       addPoint1(parseFloat(long), parseFloat(lat));
     }
@@ -153,9 +156,10 @@ var latEnd = 0;
     })
 
     console.log(long, lat);
-    var marker = new L.marker([long, lat]).addTo(map);
+    var marker = new L.marker([long, lat]).addTo(map).bindPopup(descStart).openPopup();
     longStart = long
     latStart = lat
+    // marker.bindPopup("waypoint1").openPopup();
   }
 //end fetch dropdown keberangkatan
 
@@ -168,6 +172,7 @@ var dropdown2 = document.getElementById("routeEnd");
     console.log(coord)
     var long = coord[0]
     var lat = coord[1]
+    descEnd = coord[2]
    
     if (long!== NaN&&lat!==NaN) {
       addPoint2(parseFloat(long), parseFloat(lat));
@@ -185,11 +190,14 @@ var dropdown2 = document.getElementById("routeEnd");
       iconUrl: 'img/waypoint.png',
       iconSize: [70, 70]
     })
-
+    
     console.log(long, lat);
-    var marker = new L.marker([long, lat]).addTo(map);
     longEnd = long
     latEnd = lat
+    var marker1 = new L.marker([longStart, latStart]).addTo(map).bindPopup(descStart).openPopup();
+    // marker1.bindPopup("waypoint1").openPopup();
+    var marker2 = new L.marker([longEnd, latEnd]).addTo(map).bindPopup(descStart+" menuju ke "+descEnd).openPopup();
+    // marker2.bindPopup("waypoint2").openPopup();
 
     L.Routing.control({
 				waypoints: [
@@ -197,7 +205,6 @@ var dropdown2 = document.getElementById("routeEnd");
 					L.latLng(longEnd, latEnd)
 				]
 			}).addTo(map);
-
   }
 
 //end fetch dropdown kedatangan
