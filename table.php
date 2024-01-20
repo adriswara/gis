@@ -16,11 +16,11 @@
 
       <?php
         include "connection.php";
-        $query = "SELECT * FROM rute";
-        $rute = mysqli_query($db_connection, $query);
+        $query = "SELECT * FROM terminal";
+        $terminal = mysqli_query($db_connection, $query);
 
         $i= 1;
-        foreach ($rute as $data)  :
+        foreach ($terminal as $data)  :
       ?>
 
       <tbody>

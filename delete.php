@@ -5,7 +5,7 @@ if (isset($_GET['id'])) {
 
 
 
-$query = "DELETE FROM rute WHERE id = '$_GET[id]'";
+$query = "DELETE FROM terminal WHERE id = '$_GET[id]'";
 
 
 $delete = mysqli_query($db_connection ,$query);

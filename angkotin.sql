@@ -1,4 +1,4 @@
-create SCHEMA angkotin;
+create SCHEMA IF NOT EXISTS angkotin;
 use angkotin;
 
 -- phpMyAdmin SQL Dump
@@ -6,9 +6,9 @@ use angkotin;
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 14, 2024 at 04:13 AM
+-- Generation Time: Jan 20, 2024 at 01:58 PM
 -- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,23 +46,25 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rute`
+-- Table structure for table `terminal`
 --
 
-CREATE TABLE `rute` (
+CREATE TABLE `terminal` (
   `id` int NOT NULL,
   `nama` varchar(255) NOT NULL,
-  `longitude` int NOT NULL,
-  `latitude` int NOT NULL
+  `longitude` double NOT NULL,
+  `latitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `rute`
+-- Dumping data for table `terminal`
 --
 
-INSERT INTO `rute` (`id`, `nama`, `longitude`, `latitude`) VALUES
-(1, 'ruteA', 1234, 3456),
-(4, 'titik 2', 123123123, 123124125);
+INSERT INTO `terminal` (`id`, `nama`, `longitude`, `latitude`) VALUES
+(1, 'Titik Nol Bandung', -6.9175, 107.6191),
+(4, 'Terminal Hall Bandug', -6.91178, 107.60212),
+(6, 'Terminal Antapani', -6.9153705670291234, 107.66573481355405),
+(7, 'Terminal Cicaheum Ciroyom', -6.902061686172729, 107.65629966845091);
 
 --
 -- Indexes for dumped tables
@@ -75,9 +77,9 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `rute`
+-- Indexes for table `terminal`
 --
-ALTER TABLE `rute`
+ALTER TABLE `terminal`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -91,10 +93,10 @@ ALTER TABLE `admin`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `rute`
+-- AUTO_INCREMENT for table `terminal`
 --
-ALTER TABLE `rute`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `terminal`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

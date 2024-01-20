@@ -20,7 +20,7 @@
     <form method="POST" action="update.php">
         <?php 
               include "connection.php";
-              $querry = "SELECT * FROM rute WHERE id='$_GET[id]'";
+              $querry = "SELECT * FROM terminal WHERE id='$_GET[id]'";
               $pet=mysqli_query($db_connection,$querry);
               $data=mysqli_fetch_assoc($pet);
           ?>
