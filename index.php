@@ -123,10 +123,12 @@ window.onload = function() {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 //end create open street map instance
-  
+var longStart = 0;
+var longEnd = 0;
+var latStart = 0;
+var latEnd = 0;  
 //fetch dropdown keberangkatan
   var dropdown1 = document.getElementById("routeStart");
-  
   dropdown1.addEventListener("change", (e) => {
     var coord = e.target.value.split(",")
     console.log(coord)
@@ -152,6 +154,8 @@ window.onload = function() {
 
     console.log(long, lat);
     var marker = new L.marker([long, lat]).addTo(map);
+    longStart = long
+    latStart = lat
   }
 //end fetch dropdown keberangkatan
 
@@ -184,49 +188,21 @@ var dropdown2 = document.getElementById("routeEnd");
 
     console.log(long, lat);
     var marker = new L.marker([long, lat]).addTo(map);
+    longEnd = long
+    latEnd = lat
+
+    L.Routing.control({
+				waypoints: [
+					L.latLng(longStart, latStart),
+					L.latLng(longEnd, latEnd)
+				]
+			}).addTo(map);
+
   }
 
 //end fetch dropdown kedatangan
 
-}
+}//------------------------------------------------------------------------------------------
 //end onload
-
-/*
-
-  // getter
-
-		var map = L.map('map').setView([-6.9175, 107.6191], 11);
-		mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
-		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: 'Leaflet &copy; ' + mapLink + ', contribution', maxZoom: 18 }).addTo(map);
-
-		var taxiIcon = L.icon({
-			iconUrl: 'img/waypoint.png',
-			iconSize: [70, 70]
-		})
-
-    var marker = L.marker([-6.9175, 107.6191], { icon: taxiIcon }).addTo(map);
-    
-		map.on('click', function (e) {
-			console.log(e)
-			var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
-			L.Routing.control({
-				waypoints: [
-					L.latLng(-6.9175, 107.6191),
-					L.latLng(e.latlng.lat, e.latlng.lng)
-				]
-			}).on('routesfound', function (e) {
-				var routes = e.routes;
-				console.log(routes);
-
-				e.routes[0].coordinates.forEach(function (coord, index) {
-					setTimeout(function () {
-						marker.setLatLng([coord.lat, coord.lng]);
-					}, 100 * index)
-				})
-
-			}).addTo(map);
-		});
-*/
-
 	</script>
 </html>
