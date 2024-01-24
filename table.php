@@ -1,5 +1,12 @@
 <?php include "template/header.php" ?>
 
+<?php 
+session_start();
+if (!isset($_SESSION['login'])) {
+    // echo $_SESSION['login'];
+    echo "<script>alert('Please login first :');window.location.replace('login.php');</script>";
+}
+?>
   <p><a href="add.php"> Add rute</a></p>
 
     <!-- table -->

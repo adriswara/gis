@@ -23,15 +23,15 @@
     <!-- login petclinic -->
     <h1>pet clinic</h1>
     <h3>form login</h3>
-    <form action="">
+    <form method="post" action="login_query.php">
       <table>
         <tr>
-          <td></td>
-          <td></td>
+          <td>Username</td>
+          <td>: <input type="text" name="username" required /></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>Password</td>
+          <td>: <input type="password" name="password" id="pass" required /></td>
         </tr>
         <tr>
           <td>&nbsp;</td>
@@ -40,12 +40,20 @@
         <tr>
           <td>&nbsp;</td>
           <td>&nbsp;
-            <input type="submit" value="">
-            <input type="reset" value="">
+            <input type="submit" name="login" value="LOGIN">
+            <input type="reset" name="reset" value="RESET">
           </td>
         </tr>
       </table>
     </form>
-    <!-- login petclinic -->
+    <script>  
+    function show() {
+      var x = document.getElementById("pass");
+      if (x.type === "password") {
+          x.type = "text";
+      } else {
+          x.type = "password";
+      }
+    }
 </body>
 </html>

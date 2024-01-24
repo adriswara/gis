@@ -7,16 +7,16 @@ if (isset($_POST['save'])) {
 
 
 
-$query = "INSERT INTO rute (nama, longitude, latitude) VALUES ('$_POST[nama]','$_POST[longitude]','$_POST[latitude]')";
+$query = "INSERT INTO terminal (nama, longitude, latitude) VALUES ('$_POST[nama]','$_POST[longitude]','$_POST[latitude]')";
 $create = mysqli_query($db_connection ,$query);
 
 if ($create) {
     // echo "<p>Pet added succesfully !</p>";
-    echo "<script> alert('rute added succesfuly !'); </script>";
+    echo "<script> alert('terminal added succesfuly !'); </script>";
 }
 else{
     // echo "<p>Pet add failed !</p>";
-echo "<script> alert('rute add failed!'); </script>";
+echo "<script> alert('terminal add failed!'); </script>";
 }
 }
 

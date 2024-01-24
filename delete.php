@@ -12,11 +12,11 @@ $delete = mysqli_query($db_connection ,$query);
 
     if ($delete) {
     // echo "<p>Pet added succesfully !</p>";
-    echo "<script> alert('rute delete succesfuly !'); </script>";
+    echo "<script> alert('terminal delete succesfuly !'); </script>";
     }
     else{
     // echo "<p>Pet add failed !</p>";
-    echo "<script> alert('rute delete failed!'); </script>";
+    echo "<script> alert('terminal delete failed!'); </script>";
     }
 }
 ?>
