@@ -20,5 +20,32 @@
       <button type="nanti jadi submit trus pindahin ke form" class="btn btn-primary">Submit</button>
     </a>
     <!-- Login -->
+    <!-- login petclinic -->
+    <h1>pet clinic</h1>
+    <h3>form login</h3>
+    <form action="">
+      <table>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;<input type="checkbox" onclick="show()">Show Password</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;
+            <input type="submit" value="">
+            <input type="reset" value="">
+          </td>
+        </tr>
+      </table>
+    </form>
+    <!-- login petclinic -->
 </body>
 </html>

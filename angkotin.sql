@@ -1,12 +1,11 @@
 create SCHEMA IF NOT EXISTS angkotin;
 use angkotin;
-
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 20, 2024 at 01:58 PM
+-- Generation Time: Jan 24, 2024 at 12:43 PM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.33
 
