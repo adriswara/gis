@@ -27,5 +27,5 @@ $update = mysqli_query($db_connection ,$query);
 ?>
 <!-- <p><a href="read_pet_220088.php">BACK TO PETS LIST</a></p> -->
 <script>
-window.location.replace("table.php");
+window.location.replace("read_terminal.php");
 </script>

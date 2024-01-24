@@ -18,7 +18,7 @@ if(isset($_POST['login'])) { //check post variable
 		$_SESSION['username']=$user['username'];
 		$_SESSION['password']=$user['password'];
 		
-		echo "<script>alert('login success !');window.location.replace('table.php');</script>";
+		echo "<script>alert('login success !');window.location.replace('read_terminal.php');</script>";
 		} else {
 			echo "<script>alert('login failed, wrong password !');window.location.replace('login.php');</script>";
 		}

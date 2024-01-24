@@ -17,7 +17,7 @@
       <input type="submit" name="login" value="LOGIN">
       <input type="reset" name="reset" value="RESET">
     </form>
-    <a href="table.php">
+    <a href="read_terminal.php">
     </a>
     <!-- Login -->
     <!-- login petclinic

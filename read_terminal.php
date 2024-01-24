@@ -6,7 +6,7 @@ if (!isset($_SESSION['login'])) {
     echo "<script>alert('Please login first :');window.location.replace('login.php');</script>";
 }
 ?>
-  <p><a href="add.php"> Add rute</a></p>
+  <p><a href="add_terminal.php"> Add rute</a></p>
 
     <!-- table -->
     <table class="table">
@@ -35,8 +35,8 @@ if (!isset($_SESSION['login'])) {
           <td><?php echo $data['nama']?></td>
           <td><?php echo $data['longitude']?></td>
           <td><?php echo $data['latitude']?></td>
-          <td><a href="edit.php?id=<?=$data['id']?>"><button class="btn btn-outline-primary">Edit</button></a></td>
-          <td><a href="delete.php?id=<?=$data['id']?>"><button class="btn btn-outline-danger">Delete</button></a></td>
+          <td><a href="edit_terminal.php?id=<?=$data['id']?>"><button class="btn btn-outline-primary">Edit</button></a></td>
+          <td><a href="delete_terminal.php?id=<?=$data['id']?>"><button class="btn btn-outline-danger">Delete</button></a></td>
         </tr>
       </tbody>
       <?php endforeach ?>
