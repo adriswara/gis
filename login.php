@@ -17,35 +17,6 @@
       <input type="submit" name="login" value="LOGIN">
       <input type="reset" name="reset" value="RESET">
     </form>
-    <a href="read_terminal.php">
-    </a>
-    <!-- Login -->
-    <!-- login petclinic
-    <h1>pet clinic</h1>
-    <h3>form login</h3>
-    <form method="post" action="login_query.php">
-      <table>
-        <tr>
-          <td>Username</td>
-          <td>: <input type="text" name="username" required /></td>
-        </tr>
-        <tr>
-          <td>Password</td>
-          <td>: <input type="password" name="password" id="pass" required /></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;<input type="checkbox" onclick="show()">Show Password</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;
-            <input type="submit" name="login" value="LOGIN">
-            <input type="reset" name="reset" value="RESET">
-          </td>
-        </tr>
-      </table>
-    </form> -->
     <script>  
     function show() {
       var x = document.getElementById("pass");
