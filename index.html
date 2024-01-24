@@ -14,95 +14,111 @@
   </head>
 </head>
 <body>
-  
-
-  <!-- NAVBAR FORM -->
-
-  <nav class="navbar navbar-expand-lg  bg-primary" data-bs-theme="dark">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Pilih Rute</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="">Angkotin Yuk</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a style="visibility: hidden;" class='nav-link active' aria-current='page' href='index.php'>Home</a>
+          </li>
+          <li class="nav-item">
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+        <a class='nav-link' href='login.php' aria-disabled='true'><button class='btn btn-outline-primary' type='submit'>Admin Login</button></a>
+      </div>
+    </div>
+  </nav>
+<!-- NAVBAR -->
+ <!-- NAVBAR FORM -->
+
+ <nav class="navbar navbar-expand-lg  bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Welcome</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">                  
             <li class="ms-4">
-                <p>Pilih Titik Mulai : </p>
+                
             </li>
             <li class="nav-item ms-4">
-            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>          
+                 
           </li>
           <li class="ms-4">
-                <p>Pilih Tujuan : </p>
+             
           </li>
           <li class="nav-item ms-4">
-            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>          
+                 
         </ul>
         <ul>
-          <li>
-            <a href="index.php">prod page</a>
-          </li>
+          
         </ul>
-        <!-- <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-        </select> -->
       </div>
     </div>
   </nav>
 
 <!-- NAVBAR FORM -->
+<!-- Welcome -->
+<h1 class="mt-5 mb-5" style="text-align: center;"> Selamat datang di aplikasi angkotin </h1>
+<!-- Welcome -->
+<!-- Dashboard -->
 
-   
-       
-            <!-- MAP -->
-            
-            <div id="map" style="width:100%; height: 100vh"></div>
-	        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
-	        <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-5">
+        
+        
 
-            <!-- MAP -->
+        <div class="col" style=" visibility: hidden;">
+          <div class="card shadow-sm">
+          <a href="read_terminal.php"> <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="img/terminal.png"  preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img></a>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a href="read_terminal.php"><button type="button" class="btn btn-sm btn-outline-secondary">Terminal List</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+          <a href="read_rute.php"> <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="img/rute.png" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img></a>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a href="read_rute.php"><button type="button" class="btn btn-sm btn-outline-secondary">Rute List</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
 
-      
+        <div class="col" style=" visibility: hidden;">
+          <div class="card shadow-sm">
+          <a href="read_admin.php"><img class="bd-placeholder-img card-img-top" width="100%" height="225" src="img/admin.png" role="img" aria-label="Placeholder: " preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img></a>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                <a href="read_admin.php"><button type="button" class="btn btn-sm btn-outline-secondary">Admin Setting</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
 
+<!-- Dashboard -->
 
 </body>
-<script>
-
-		var map = L.map('map').setView([-6.9175, 107.6191], 11);
-		mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
-		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: 'Leaflet &copy; ' + mapLink + ', contribution', maxZoom: 18 }).addTo(map);
-
-		var taxiIcon = L.icon({
-			iconUrl: 'img/waypoint.png',
-			iconSize: [70, 70]
-		})
-
-        var marker = L.marker([-6.9175, 107.6191], { icon: taxiIcon }).addTo(map);
-
-		map.on('click', function (e) {
-			console.log(e)
-			var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
-			L.Routing.control({
-				waypoints: [
-					L.latLng(-6.9175, 107.6191),
-					L.latLng(-6.91178, 107.60212)
-				]
-			}).addTo(map);
-		});
-
-
-	</script>
 </html>
