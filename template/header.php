@@ -34,7 +34,7 @@
             <?php 
                session_start();
                if (isset($_SESSION['login'])) {
-                  echo "<p>Logged as :" . $_SESSION['username'] . "</p><a class='nav-link' href='logout.php' aria-disabled='true'><button class='btn btn-outline-primary' type='submit'>Logout</button></a>";
+                  echo "<p>Logged as :" . $_SESSION['username'] . "  </p><a class='nav-link' href='logout.php' aria-disabled='true'><button class='btn btn-outline-primary' type='submit'>Logout</button></a>";
  
                }
                else if(!isset($_SESSION['login'])) {
