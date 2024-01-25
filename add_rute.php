@@ -26,23 +26,17 @@ if (!isset($_SESSION['login'])) {
 
 <body>
     <h1>Angkotin</h1>
-    <h3>Form Penambahan Terminal</h3>
-    <form method="POST" action="create_terminal.php">
+    <h3>Form Penambahan Rute</h3>
+    <form method="POST" action="create_rute.php">
         <table>
             <tr>
-                <td>Nama</td>
-                <td><input type="text" name="nama" required></td>
+                <td>Titik Start</td>
+                <td><input type="text" name="fk_terminalA" required></td>
             </tr>
             <tr>
-                <td>Longitude</td>
-                <td><input type="text" name="longitude" required></td>
+                <td>Tidik End</td>
+                <td><input type="text" name="fk_terminalB" required></td>
             </tr>
-            <tr>
-                <td>Latitude</td>
-                <td><input type="text" name="latitude" required></td>
-            </tr>
-
-
             <tr>
                 <td></td>
                 <td>
@@ -52,7 +46,7 @@ if (!isset($_SESSION['login'])) {
             </tr>
         </table>
     </form>
-    <p><a href="read_terminal.php">CANCEL</a></p>
+    <p><a href="read_rute.php">CANCEL</a></p>
 </body>
 
 </html>
