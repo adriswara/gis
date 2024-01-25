@@ -5,7 +5,7 @@ if (isset($_POST['save'])) {
 
 
 
-$query = "UPDATE rute SET 
+$query = "UPDATE terminal SET 
           nama = '$_POST[nama]', 
           longitude = '$_POST[longitude]', 
           latitude = '$_POST[latitude]'
@@ -17,11 +17,11 @@ $update = mysqli_query($db_connection ,$query);
 
     if ($update) {
     // echo "<p>Pet update succesfully !</p>";
-    echo "<script> alert('rute update succesfuly !'); </script>";
+    echo "<script> alert('terminal update succesfuly !'); </script>";
     }
     else{
     // echo "<p>Anggota update failed !</p>";
-    echo "<script> alert('rute update failed!'); </script>";
+    echo "<script> alert('terminal update failed!'); </script>";
     }
 }
 ?>

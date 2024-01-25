@@ -194,12 +194,38 @@ var dropdown2 = document.getElementById("routeEnd");
     var marker2 = new L.marker([longEnd, latEnd]).addTo(map).bindPopup(descStart+" menuju ke "+descEnd).openPopup();
     // marker2.bindPopup("waypoint2").openPopup();
 
-    L.Routing.control({
+      
+      //selected route
+      L.Routing.control({
+          waypoints: [
+            L.latLng(longStart, latStart),
+            L.latLng(longEnd, latEnd)
+          ]
+        }).addTo(map);
+      //selected route
+
+      //route 1
+      L.Routing.control({
 				waypoints: [
-					L.latLng(longStart, latStart),
-					L.latLng(longEnd, latEnd)
-				]
+					L.latLng(-6.9153705670291234, 107.66573481355405),
+					L.latLng(-6.91178, 107.60212)
+				],
+        lineOptions: {
+          styles: [{color: 'green', opacity: 1, weight: 10}]
+        }
 			}).addTo(map);
+      //route1
+      //route 2
+      L.Routing.control({
+				waypoints: [
+					L.latLng(-6.880584606143148	, 107.5380307276204),
+					L.latLng(-6.91178	, 107.60212)
+				],
+        lineOptions: {
+          styles: [{color: 'orange', opacity: 1, weight: 10}]
+        }
+			}).addTo(map);
+      //route 2
   }
 
 //end fetch dropdown kedatangan
