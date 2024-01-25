@@ -26,7 +26,7 @@ if (!isset($_SESSION['login'])) {
 <body>
     <h1>Angkotin</h1>
     <h3>Form Edit Rute</h3>
-    <form method="POST" action="update.php">
+    <form method="POST" action="update_terminal.php">
         <?php 
               include "connection.php";
               $querry = "SELECT * FROM terminal WHERE id='$_GET[id]'";

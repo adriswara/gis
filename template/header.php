@@ -35,6 +35,11 @@
                 ?>
               </li>
               <li class="nav-item">
+                <?php 
+                if (isset($_SESSION['login'])) {
+                  echo "<a class='nav-link active' aria-current='page' href='dashboard.php'>Admin Dashboard</a>";
+                }
+                ?>
               </li>
               <li class="nav-item">
               </li>
