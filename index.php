@@ -112,6 +112,15 @@
          <td>Antapani-Ciroyom</td>
          <td style="background: brown"></td>
         </tr>
+        <tr>
+         <th>9</th>
+         <td>Antapani-Leuih Panjang</td>
+         <td style="background: yellowGreen"></td>
+        </tr>
+        <th>10</th>
+         <td>kebon kalapa-Cimahi</td>
+         <td style="background: gold"></td>
+        </tr>
       </tbody>
 
 
@@ -295,6 +304,28 @@ var dropdown2 = document.getElementById("routeEnd");
         }
 			}).addTo(map);
       //route 8
+      //route 9 antapani leuih panjang
+         L.Routing.control({
+				waypoints: [
+					L.latLng(-6.915370567029123	, 107.66573481355405),
+					L.latLng(-6.945974047146048	, 107.59461437150387)
+				],
+        lineOptions: {
+          styles: [{color: 'yellowGreen', opacity: 1, weight: 10}]
+        }
+			}).addTo(map);
+      //route 9
+       //route 10 kebonkalapa cimahi
+       L.Routing.control({
+				waypoints: [
+					L.latLng(-6.925770250985667, 107.6064554607754),
+					L.latLng(-6.880584606143148	, 107.5380307276204)
+				],
+        lineOptions: {
+          styles: [{color: 'gold', opacity: 1, weight: 10}]
+        }
+			}).addTo(map);
+      //route 10
         //selected route
         L.Routing.control({
           waypoints: [
