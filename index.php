@@ -55,51 +55,54 @@
     </div>
   </nav>
 
-<!-- NAVBAR FORM -->
-
-   
-       
-          <!-- MAP -->
-            
-          <div id="map" style="width:100%; height: 100vh"></div>
-	        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
-	        <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
-
-          <!-- MAP -->
-
-
-          <!-- table -->
-    <table class="table" style="display: none">
+<!-- NAVBAR FORM -->       
+<!-- MAP -->            
+<div id="map" style="width:100%; height: 100vh"></div>
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<!-- MAP -->
+<!-- table -->
+    <table class="table" style="">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nama</th>
-          <th scope="col">Longitude</th>
-          <th scope="col">Latitude</th>
-          <th colspan="2" scope="col">Action</th>
+          <th scope="col">No</th>
+          <th scope="col">Rute</th>
+          <th scope="col">Warna</th>
         </tr>
       </thead>
 
-      <?php
-        include "connection.php";
-        $query = "SELECT * FROM terminal";
-        $rute = mysqli_query($db_connection, $query);
-
-        $i= 1;
-        foreach ($rute as $data)  :
-      ?>
-
       <tbody>
         <tr>
-          <th scope="row"><?php echo $i++; ?></th>
-          <td><?php echo $data['nama']?></td>
-          <td><?php echo $data['longitude']?></td>
-          <td><?php echo $data['latitude']?></td>
-          <td><a href="edit_terminal.php?id=<?=$data['id']?>"><button class="btn btn-outline-primary">Edit</button></a></td>
-          <td><a href="delete_terminal.php?id=<?=$data['id']?>"><button class="btn btn-outline-danger">Delete</button></a></td>
+         <th>1</th>
+         <td>Caheum-Ledeng</td>
+         <td style="background: green"></td>
+        </tr>
+        <tr>
+         <th>2</th>
+         <td>Ciroyom-Sarijadi</td>
+         <td style="background: orange"></td>
+        </tr>
+        <tr>
+         <th>3</th>
+         <td>Cisitu-Tegalega</td>
+         <td style="background: pink"></td>
+        </tr>
+        <tr>
+         <th>4</th>
+         <td>Cibiru-Cicadas</td>
+         <td style="background: black"></td>
+        </tr>
+        <tr>
+         <th>5</th>
+         <td>Kebonkelapa-Dago</td>
+         <td style="background: purple"></td>
+        </tr>
+        <tr>
+         <th>6</th>
+         <td>Pasar Kordon-Kebonkelapa</td>
+         <td style="background: yellow"></td>
         </tr>
       </tbody>
-      <?php endforeach ?>
 
 
     </table>
@@ -204,28 +207,73 @@ var dropdown2 = document.getElementById("routeEnd");
         }).addTo(map);
       //selected route
 
-      //route 1
+      //route 1 caheum ledeng
       L.Routing.control({
 				waypoints: [
-					L.latLng(-6.9153705670291234, 107.66573481355405),
-					L.latLng(-6.91178, 107.60212)
+					L.latLng(-6.902061686172729, 107.65629966845091),
+					L.latLng(-6.859003683786733, 107.59505869558306)
 				],
         lineOptions: {
           styles: [{color: 'green', opacity: 1, weight: 10}]
         }
 			}).addTo(map);
       //route1
-      //route 2
+      //route 2 ciroyom sarijadi
       L.Routing.control({
 				waypoints: [
-					L.latLng(-6.880584606143148	, 107.5380307276204),
-					L.latLng(-6.91178	, 107.60212)
+					L.latLng(-6.9268954701077	, 107.55059094385247),
+					L.latLng(-6.889676073381499	, 107.61271490563595)
 				],
         lineOptions: {
           styles: [{color: 'orange', opacity: 1, weight: 10}]
         }
 			}).addTo(map);
       //route 2
+      //route 3 cisitu tegalega
+      L.Routing.control({
+				waypoints: [
+					L.latLng(-6.872274344858246	, 107.61404520375844),
+					L.latLng(-6.932631725980285, 107.60276455279126)
+				],
+        lineOptions: {
+          styles: [{color: 'pink', opacity: 1, weight: 10}]
+        }
+			}).addTo(map);
+      //route 3
+       //route 4 cibiru cicadas
+       L.Routing.control({
+				waypoints: [
+					L.latLng(-6.905082692350188, 107.57496685829632),
+					L.latLng(-6.911410112080165, 107.64351008745952)
+				],
+        lineOptions: {
+          styles: [{color: 'black', opacity: 1, weight: 10}]
+        }
+			}).addTo(map);
+      //route 4
+       //route 5 kebonkalapa dago
+       L.Routing.control({
+				waypoints: [
+					L.latLng(-6.925770250985667, 107.6064554607754),
+					L.latLng(-6.942231975610562, 107.68311352096971)
+				],
+        lineOptions: {
+          styles: [{color: 'purple', opacity: 1, weight: 10}]
+        }
+			}).addTo(map);
+      //route 5
+       //route 6 pasar kordon kebon kelapa
+       L.Routing.control({
+				waypoints: [
+					L.latLng(-6.94938884052372, 107.63848156494578),
+					L.latLng(-6.925770250985667, 107.6064554607754)
+				],
+        lineOptions: {
+          styles: [{color: 'yellow', opacity: 1, weight: 10}]
+        }
+			}).addTo(map);
+      //route 6
+      
   }
 
 //end fetch dropdown kedatangan
