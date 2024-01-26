@@ -102,6 +102,16 @@
          <td>Pasar Kordon-Kebonkelapa</td>
          <td style="background: yellow"></td>
         </tr>
+        <tr>
+         <th>7</th>
+         <td>Cimahi-Leuih Panjang</td>
+         <td style="background: cyan"></td>
+        </tr>
+        <tr>
+         <th>8</th>
+         <td>Antapani-Ciroyom</td>
+         <td style="background: brown"></td>
+        </tr>
       </tbody>
 
 
@@ -197,16 +207,6 @@ var dropdown2 = document.getElementById("routeEnd");
     var marker2 = new L.marker([longEnd, latEnd]).addTo(map).bindPopup(descStart+" menuju ke "+descEnd).openPopup();
     // marker2.bindPopup("waypoint2").openPopup();
 
-      
-      //selected route
-      L.Routing.control({
-          waypoints: [
-            L.latLng(longStart, latStart),
-            L.latLng(longEnd, latEnd)
-          ]
-        }).addTo(map);
-      //selected route
-
       //route 1 caheum ledeng
       L.Routing.control({
 				waypoints: [
@@ -273,6 +273,37 @@ var dropdown2 = document.getElementById("routeEnd");
         }
 			}).addTo(map);
       //route 6
+       //route 7 Cimahi Leuih panjang
+       L.Routing.control({
+				waypoints: [
+					L.latLng(-6.880584606143148	, 107.5380307276204),
+					L.latLng(-6.945974047146048	, 107.59461437150387)
+				],
+        lineOptions: {
+          styles: [{color: 'cyan', opacity: 1, weight: 10}]
+        }
+			}).addTo(map);
+      //route 7
+      //route 8 antapani ciroyom
+      L.Routing.control({
+				waypoints: [
+					L.latLng(-6.915370567029123	, 107.66573481355405),
+					L.latLng(-6.9268954701077	, 107.55059094385247)
+				],
+        lineOptions: {
+          styles: [{color: 'brown', opacity: 1, weight: 10}]
+        }
+			}).addTo(map);
+      //route 8
+        //selected route
+        L.Routing.control({
+          waypoints: [
+            L.latLng(longStart, latStart),
+            L.latLng(longEnd, latEnd)
+          ]
+        }).addTo(map);
+      //selected route
+
       
   }
 
